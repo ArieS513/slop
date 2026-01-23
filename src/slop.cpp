@@ -213,7 +213,6 @@ slop::SlopSelection slop::XShapeSlopSelect( slop::SlopOptions* options ) {
         XEvent event;
         if ( XCheckTypedEvent( x11->display, UnmapNotify, &event ) ) { break; }
         if ( XCheckTypedEvent( x11->display, DestroyNotify, &event ) ) { break; }
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
         tries++;
     }
     // Finally return the data.
@@ -333,7 +332,6 @@ slop::SlopSelection slop::GLSlopSelect( slop::SlopOptions* options, SlopWindow* 
         XEvent event;
         if ( XCheckTypedEvent( x11->display, UnmapNotify, &event ) ) { break; }
         if ( XCheckTypedEvent( x11->display, DestroyNotify, &event ) ) { break; }
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
         tries++;
     }
     // Finally return the data.
